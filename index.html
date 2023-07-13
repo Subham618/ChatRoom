@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- container & title -->
+  <div class="container my-4">
+    <h1 class="my-4 text-center">Subham Chat</h1>
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms mb-3 text-center">
+      <div class="my-2">Choose a chatroom:</div>
+      <button class="btn btn-hover" id="general">#general</button>
+      <button class="btn " id="gaming">#gaming</button>
+      <button class="btn " id="music">#music</button>
+      <button class="btn " id="ninjas">#ninjas</button>
+    </div>
+    <!-- chat list / window -->
+    <div class="chat-window">
+      <ul class="chat-list list-group"></ul>
+    </div>
+    <!-- new chat form -->
+    <form class="new-chat my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Your message:</div>
+        </div>
+        <input type="text" id="message" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="send">
+        </div>
+      </div>
+    </form>
+    <!-- update name form -->
+    <form class="new-name my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Update name:</div>
+        </div>
+        <input type="text" id="name" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="update">
+        </div>
+      </div>
+      <div class="update-mssg"></div>
+    </form>
+  </div>
+  <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- certain version doesn't this traditional way of interacting the database -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  const firebaseConfig = {
+          apiKey: "AIzaSyAJhNc_mJ1J_Kxvx2ubFvYmv8RZKYhXiZI",
+          authDomain: "subham-hosting.firebaseapp.com",
+          projectId: "subham-hosting",
+          storageBucket: "subham-hosting.appspot.com",
+          messagingSenderId: "879331111087",
+          appId: "1:879331111087:web:cce692ad06fd1b4b6fe45a"
+        };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();  
+</script>
+  <script src="scripts/chat.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
